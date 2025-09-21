@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Conforto Térmico: A Temperatura Está Ideal?</h1>
+
+    <span>Informe a temperatura atual:</span>
+    <input type="text" id="input_temperatura">
+
+    <button onclick="Ver()">Ver situação</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Ver(){
+        var temperatura = Number(input_temperatura.value);
+
+        if(temperatura >= 21 && temperatura <= 24) {
+            div_mensagem.innerHTML = `Temperatura confortável :D`;
+        }else{
+            div_mensagem.innerHTML = `Temperatura DESCONFORTÁVEL :C`;
+  
+        }
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recarga Fidelidade Metrô: Economize com Descontos Especiais!</h1>
+
+    <span>Informe a quantidade de passagens que deseja adquirir:</span>
+    <input type="text" id="input_passagem"> <br>
+
+    <button onclick="comprar()">Comprar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    preco = 0;
+
+    function comprar(){
+        var passagem = Number(input_passagem.value);
+        var valor = passagem * 4.40;
+
+        if(passagem < 8 && passagem){
+            div_mensagem.innerHTML = `Quantidade inválida para o Fidelidade!`;
+        }else if(passagem >= 8 && passagem <= 19){
+            preco = valor * 0.97; 
+            div_mensagem.innerHTML = `Total a pagar: ${preco.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})}`;
+        }else if(passagem >= 20 && passagem <= 49){
+            preco = valor * 0.95;
+            div_mensagem.innerHTML = `Total a pagar: ${preco.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})}`;
+        }else if(passagem = 50 ){
+            preco = valor * 0.93;
+            div_mensagem.innerHTML = `Total a pagar: ${preco.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})}`;
+        }else{
+            div_mensagem.innerHTML = `Total a pagar: ${preco.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})}`;
+
+        }
+    }
+</script>
